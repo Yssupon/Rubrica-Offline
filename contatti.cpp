@@ -9,6 +9,7 @@ void aggiungi();
 void cerca();
 void help();
 void exit();
+void mostra();
 bool numerii(string);
 
 void help()
@@ -53,7 +54,7 @@ void aggiungi()
 
 void output(){
 	
-				cout << "\n\n\n\t\tCONTATTO:";
+			cout << "\n\n\n\t\tCONTATTO:";
 			cout << "\n\nNome : " << nome;
 			cout << "\nCognome : " << cnome;
 			cout << "\nNumero di telefono : " << numero;
@@ -62,14 +63,14 @@ void output(){
 void cerca()
 {
 	bool found = false;
-	ifstream fileee("rubrica.txt");
+	ifstream myfile("rubrica.txt");
 	string chiave;
 	cout << "\n\tInserisci nome da cercare : ";
 	cin >> chiave;
-	while (fileee >> nome >> cnome >> numero) {
+	while (myfile >> nome >> cnome >> numero) {
 		if (chiave == nome || chiave == cnome) {
 			system("cls");
-			output();
+            output();
 			found = true;
 			break;
 		}
@@ -143,6 +144,20 @@ cout << "mr.biasi";
 	system("cls");
 }
 
+void mostra(){
+
+	ifstream myfile("rubrica.txt");
+	while (myfile >> nome >> cnome >> numero) {
+		for(int i=0;i<1;i++){
+			output();
+			cout << " " << endl;
+		}
+		
+	}
+	cout << endl << endl;
+	system("pause");
+	system("cls");
+}
 int main()
 {
 	int scelta;
@@ -151,7 +166,7 @@ int main()
 	while (1) {
 		cout << "\n\n\n\t\t\tRUBRICA OFFLINE, SICURA E OPEN-SOURCE!";
 		cout << "\n\n\t1. Aggiungi contatti\n\t2. Cerca "
-				"contatti\n\t3. AIUTATEMIIIII!!!11!!1!1!\n\t4. Esci\n\t> ";
+				"contatti\n\t3. Mostra contatti\n\t4. AIUTATEMIIIII!!!11!!1!1!\n\t5. Esci\n\t> ";
 		cin >> scelta;
 
 		switch (scelta) {
@@ -164,10 +179,14 @@ int main()
 			break;
 
 		case 3:
-			help();
+			mostra();
 			break;
 
 		case 4:
+			help();
+			break;
+
+		case 5:
 			exit();
 			break;
 
