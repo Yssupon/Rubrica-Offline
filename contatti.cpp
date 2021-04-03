@@ -88,6 +88,8 @@ void exit()
 {
 	system("cls");
 	cout << "\n\n\n\t\tCiao bellissimo!";
+	cout << endl << endl;
+	system("pause");
 	exit(1);
 }
 
