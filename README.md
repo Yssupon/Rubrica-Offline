@@ -8,7 +8,7 @@ Una magnifica rubrica, gratuita e open source che crea i tuoi contatti e li salv
  - Cercare i contatti
  - Salvare tutti i contatti in un file .txt
 
-# Come eseguirlo su macOS/Linux
+# Come eseguirlo su Linux
 Aprire il terminale nella cartella in cui si trova il file "rubrica" ed eseguire questi comandi:
 
     chmod +x rubrica
